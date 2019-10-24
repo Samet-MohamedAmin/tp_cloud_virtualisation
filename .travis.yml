@@ -1,0 +1,21 @@
+sudo: required
+language: java
+services:
+  - docker
+env:
+  global:
+    - OWNER=SAMET
+before_install:
+  - echo "[BEFORE INSTALL]"
+  - git clone https://github.com/Samet-MohamedAmin/spring-reactive-rest
+  - ls
+
+
+script:
+  - cd spring-reactive-rest
+  - ./mvnw package
+
+after_success:
+  - echo "[AFTER INSTALL]"
+  - cd target
+  - ls
